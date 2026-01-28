@@ -68,8 +68,15 @@ public class SystemeGestionBibliotheque {
             System.out.print("ISBN : ");
             String isbn = scanner.nextLine();
             System.out.print("Année de publication : ");
-            int annee = scanner.nextInt();
-            scanner.nextLine();
+            int annee;
+            try {
+                annee = scanner.nextInt();
+                scanner.nextLine();
+            } catch (Exception e) {
+                System.out.println("Erreur: Veuillez entrer une année valide (ex: 2000)");
+                scanner.nextLine(); // clear invalid input
+                return;
+            }
             System.out.print("Genre : ");
             String genre = scanner.nextLine();
 
